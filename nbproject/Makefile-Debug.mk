@@ -22,7 +22,6 @@ AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
-CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -35,8 +34,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/848377111/MyApp.o \
 	${OBJECTDIR}/_ext/848377111/UI.o \
+	${OBJECTDIR}/_ext/848377111/MyApp.o \
 	${OBJECTDIR}/_ext/848377111/UIMainFrame.o
 
 
@@ -44,8 +43,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=`/opt/wxWidgets/wxWidgets-3.0.2/build2/wx3.0.2ud_static/wx-config --cxxflags` 
-CXXFLAGS=`/opt/wxWidgets/wxWidgets-3.0.2/build2/wx3.0.2ud_static/wx-config --cxxflags` 
+CCFLAGS=`wx-config --cxxflags` 
+CXXFLAGS=`wx-config --cxxflags` 
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -54,7 +53,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu -L../DdyLib.wx/dist/Debug/GNU-Linux-x86 -Wl,-rpath /usr/lib/x86_64-linux-gnu -Wl,-rpath ../DdyLib.wx/dist/Debug/GNU-Linux-x86 -lwx_gtk2u_xrc-3.0 -lwx_gtk2u_html-3.0 -lwx_gtk2u_qa-3.0 -lwx_gtk2u_adv-3.0 -lwx_gtk2u_core-3.0 -lwx_baseu_xml-3.0 -lwx_baseu_net-3.0 -lwx_baseu-3.0 -lDdyLib.wx
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -62,32 +61,32 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp ${OBJECTFILES} ${LDLIBSOPTIONS} `/opt/wxWidgets/wxWidgets-3.0.2/build2/wx3.0.2ud_static/wx-config --libs`
-
-${OBJECTDIR}/_ext/848377111/MyApp.o: /home/dedy/NetBeansProjects/wxApp/MyApp.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/848377111/MyApp.o /home/dedy/NetBeansProjects/wxApp/MyApp.cpp
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/_ext/848377111/UI.o: /home/dedy/NetBeansProjects/wxApp/UI.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/848377111/UI.o /home/dedy/NetBeansProjects/wxApp/UI.cpp
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/UI.o /home/dedy/NetBeansProjects/wxApp/UI.cpp
 
 ${OBJECTDIR}/_ext/848377111/UI.h.gch: /home/dedy/NetBeansProjects/wxApp/UI.h 
 	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o "$@" /home/dedy/NetBeansProjects/wxApp/UI.h
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o $@ /home/dedy/NetBeansProjects/wxApp/UI.h
+
+${OBJECTDIR}/_ext/848377111/MyApp.o: /home/dedy/NetBeansProjects/wxApp/MyApp.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/MyApp.o /home/dedy/NetBeansProjects/wxApp/MyApp.cpp
 
 ${OBJECTDIR}/_ext/848377111/UIMainFrame.o: /home/dedy/NetBeansProjects/wxApp/UIMainFrame.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/848377111/UIMainFrame.o /home/dedy/NetBeansProjects/wxApp/UIMainFrame.cpp
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/UIMainFrame.o /home/dedy/NetBeansProjects/wxApp/UIMainFrame.cpp
 
 ${OBJECTDIR}/_ext/848377111/UIMainFrame.h.gch: /home/dedy/NetBeansProjects/wxApp/UIMainFrame.h 
 	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o "$@" /home/dedy/NetBeansProjects/wxApp/UIMainFrame.h
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o $@ /home/dedy/NetBeansProjects/wxApp/UIMainFrame.h
 
 # Subprojects
 .build-subprojects:

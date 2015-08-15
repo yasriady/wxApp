@@ -1,3 +1,8 @@
+# Ddy: ignore Netbeans C++ build directory
+
+build/
+dist/
+
 # Ddy: added from https://github.com/github/gitignore
 # --------------------------------------------------------------------------
 
