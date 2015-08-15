@@ -40,20 +40,12 @@
       <compileType>
         <ccTool>
           <commandlineTool>g++</commandlineTool>
-          <incDir>
-            <pElem>../DdyLib.wx</pElem>
-          </incDir>
           <commandLine>`wx-config --cxxflags`</commandLine>
         </ccTool>
         <linkerTool>
           <linkerAddLib>
             <pElem>/usr/lib/x86_64-linux-gnu</pElem>
-            <pElem>../DdyLib.wx/dist/Debug/GNU-Linux-x86</pElem>
           </linkerAddLib>
-          <linkerDynSerch>
-            <pElem>/usr/lib/x86_64-linux-gnu</pElem>
-            <pElem>../DdyLib.wx/dist/Debug/GNU-Linux-x86</pElem>
-          </linkerDynSerch>
           <linkerLibItems>
             <linkerLibLibItem>wx_gtk2u_xrc-3.0</linkerLibLibItem>
             <linkerLibLibItem>wx_gtk2u_html-3.0</linkerLibLibItem>
@@ -63,7 +55,6 @@
             <linkerLibLibItem>wx_baseu_xml-3.0</linkerLibLibItem>
             <linkerLibLibItem>wx_baseu_net-3.0</linkerLibLibItem>
             <linkerLibLibItem>wx_baseu-3.0</linkerLibLibItem>
-            <linkerLibLibItem>DdyLib.wx</linkerLibLibItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
