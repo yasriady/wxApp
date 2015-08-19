@@ -34,9 +34,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/848377111/UI.o \
-	${OBJECTDIR}/_ext/848377111/MyApp.o \
-	${OBJECTDIR}/_ext/848377111/UIMainFrame.o
+	${OBJECTDIR}/MyApp.o \
+	${OBJECTDIR}/GUI/UI.o \
+	${OBJECTDIR}/GUI/UIMainFrame.o
 
 
 # C Compiler Flags
@@ -57,26 +57,26 @@ LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu -lwx_gtk2u_xrc-3.0 -lwx_gtk2u_html-3.0
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/_ext/848377111/UI.o: /home/dedy/NetBeansProjects/wxApp/UI.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
+${OBJECTDIR}/MyApp.o: MyApp.cpp 
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/UI.o /home/dedy/NetBeansProjects/wxApp/UI.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/MyApp.o MyApp.cpp
 
-${OBJECTDIR}/_ext/848377111/MyApp.o: /home/dedy/NetBeansProjects/wxApp/MyApp.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
+${OBJECTDIR}/GUI/UI.o: GUI/UI.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GUI
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/MyApp.o /home/dedy/NetBeansProjects/wxApp/MyApp.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GUI/UI.o GUI/UI.cpp
 
-${OBJECTDIR}/_ext/848377111/UIMainFrame.o: /home/dedy/NetBeansProjects/wxApp/UIMainFrame.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
+${OBJECTDIR}/GUI/UIMainFrame.o: GUI/UIMainFrame.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GUI
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/UIMainFrame.o /home/dedy/NetBeansProjects/wxApp/UIMainFrame.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/GUI/UIMainFrame.o GUI/UIMainFrame.cpp
 
 # Subprojects
 .build-subprojects:
@@ -84,7 +84,7 @@ ${OBJECTDIR}/_ext/848377111/UIMainFrame.o: /home/dedy/NetBeansProjects/wxApp/UIM
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx
 
 # Subprojects
 .clean-subprojects:

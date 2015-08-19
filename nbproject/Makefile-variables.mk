@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux-x86
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=wxapp
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/wxapp
+CND_ARTIFACT_NAME_Debug=ddyapp.wx
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/ddyapp.wx
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Debug=wxapp.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/wxapp.tar
+CND_PACKAGE_NAME_Debug=ddyapp.wx.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/ddyapp.wx.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux-x86
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
-CND_ARTIFACT_NAME_Release=wxapp
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/wxapp
+CND_ARTIFACT_NAME_Release=ddyapp.wx
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/ddyapp.wx
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Release=wxapp.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/wxapp.tar
+CND_PACKAGE_NAME_Release=ddyapp.wx.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/ddyapp.wx.tar
 #
 # include compiler specific variables
 #

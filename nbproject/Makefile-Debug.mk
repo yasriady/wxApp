@@ -34,17 +34,17 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/848377111/UI.o \
-	${OBJECTDIR}/_ext/848377111/MyApp.o \
-	${OBJECTDIR}/_ext/848377111/UIMainFrame.o
+	${OBJECTDIR}/MyApp.o \
+	${OBJECTDIR}/GUI/UI.o \
+	${OBJECTDIR}/GUI/UIMainFrame.o
 
 
 # C Compiler Flags
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=`wx-config --cxxflags` 
-CXXFLAGS=`wx-config --cxxflags` 
+CCFLAGS=`../DdyLib.wx/wx-config.my` 
+CXXFLAGS=`../DdyLib.wx/wx-config.my` 
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -53,51 +53,49 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu -lwx_gtk2u_xrc-3.0 -lwx_gtk2u_html-3.0 -lwx_gtk2u_qa-3.0 -lwx_gtk2u_adv-3.0 -lwx_gtk2u_core-3.0 -lwx_baseu_xml-3.0 -lwx_baseu_net-3.0 -lwx_baseu-3.0
+LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu -lwx_gtk2u_xrc-3.0 -lwx_gtk2u_html-3.0 -lwx_gtk2u_qa-3.0 -lwx_gtk2u_adv-3.0 -lwx_gtk2u_core-3.0 -lwx_baseu_xml-3.0 -lwx_baseu_net-3.0 -lwx_baseu-3.0 ../DdyLib.wx/dist/Debug/GNU-Linux-x86/libddylib.wx.a ../wxCodes/wxsqlite3/lib/libwxcode_gtk2ud_wxsqlite3-3.0.a /usr/lib/x86_64-linux-gnu/libsqlite3.so.0
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx: ../DdyLib.wx/dist/Debug/GNU-Linux-x86/libddylib.wx.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx: ../wxCodes/wxsqlite3/lib/libwxcode_gtk2ud_wxsqlite3-3.0.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx: /usr/lib/x86_64-linux-gnu/libsqlite3.so.0
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
-${OBJECTDIR}/_ext/848377111/UI.o: /home/dedy/NetBeansProjects/wxApp/UI.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
+${OBJECTDIR}/MyApp.o: MyApp.cpp 
+	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/UI.o /home/dedy/NetBeansProjects/wxApp/UI.cpp
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o ${OBJECTDIR}/MyApp.o MyApp.cpp
 
-${OBJECTDIR}/_ext/848377111/UI.h.gch: /home/dedy/NetBeansProjects/wxApp/UI.h 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
+${OBJECTDIR}/GUI/UI.o: GUI/UI.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GUI
 	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o $@ /home/dedy/NetBeansProjects/wxApp/UI.h
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o ${OBJECTDIR}/GUI/UI.o GUI/UI.cpp
 
-${OBJECTDIR}/_ext/848377111/MyApp.o: /home/dedy/NetBeansProjects/wxApp/MyApp.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
+${OBJECTDIR}/GUI/UIMainFrame.o: GUI/UIMainFrame.cpp 
+	${MKDIR} -p ${OBJECTDIR}/GUI
 	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/MyApp.o /home/dedy/NetBeansProjects/wxApp/MyApp.cpp
-
-${OBJECTDIR}/_ext/848377111/UIMainFrame.o: /home/dedy/NetBeansProjects/wxApp/UIMainFrame.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/848377111/UIMainFrame.o /home/dedy/NetBeansProjects/wxApp/UIMainFrame.cpp
-
-${OBJECTDIR}/_ext/848377111/UIMainFrame.h.gch: /home/dedy/NetBeansProjects/wxApp/UIMainFrame.h 
-	${MKDIR} -p ${OBJECTDIR}/_ext/848377111
-	${RM} $@.d
-	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o $@ /home/dedy/NetBeansProjects/wxApp/UIMainFrame.h
+	$(COMPILE.cc) -g -I../DdyLib.wx -MMD -MP -MF $@.d -o ${OBJECTDIR}/GUI/UIMainFrame.o GUI/UIMainFrame.cpp
 
 # Subprojects
 .build-subprojects:
+	cd ../DdyLib.wx && ${MAKE}  -f Makefile CONF=Debug
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/wxapp
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ddyapp.wx
 
 # Subprojects
 .clean-subprojects:
+	cd ../DdyLib.wx && ${MAKE}  -f Makefile CONF=Debug clean
 
 # Enable dependency checking
 .dep.inc: .depcheck-impl

@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>wxApp</name>
+            <name>DdyApp.wx</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
@@ -11,7 +11,9 @@
             <formatting>
                 <project-formatting-style>false</project-formatting-style>
             </formatting>
-            <make-dep-projects/>
+            <make-dep-projects>
+                <make-dep-project>../DdyLib.wx</make-dep-project>
+            </make-dep-projects>
             <sourceRootList/>
             <confList>
                 <confElem>

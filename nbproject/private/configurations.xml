@@ -27,14 +27,17 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
+          <runcommandpicklistitem>/home/dedy/NetBeansProjects/DdyApp.wx/dist/Debug/GNU-Linux-x86/ddyapp.wx</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"</runcommand>
-        <rundir></rundir>
+        <rundir>/home/dedy/NetBeansProjects/DdyApp.wx/dist/Debug/GNU-Linux-x86</rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
         <remove-instrumentation>0</remove-instrumentation>
         <environment>
+          <variable name="LD_LIBRARY_PATH"
+                    value="/usr/lib/x86_64-linux-gnu: /opt/wxWidgets/RuntimeLib"/>
         </environment>
       </runprofile>
     </conf>

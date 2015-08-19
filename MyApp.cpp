@@ -8,7 +8,7 @@
  **************************************************************/
 
 #include <wx/wx.h>
-#include "UIMainFrame.h"
+#include "GUI/UIMainFrame.h"
 
 class MyApp: public wxApp {
 
